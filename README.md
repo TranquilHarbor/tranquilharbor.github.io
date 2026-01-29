@@ -16,7 +16,8 @@ The CXone configuration can be found in the script section of the HTML files, wh
 
 ## Technologies Used
 
-- HTML5
+- Python 3 / Flask (web application)
+- HTML5 / Jinja2 templates
 - CSS3
 - JavaScript
 - Bootstrap
@@ -41,23 +42,39 @@ The CXone configuration can be found in the script section of the HTML files, wh
 
 ## Project Structure
 
+**Flask app structure:**
 ```
-├── css/               # Stylesheet files
-├── fonts/            # Font Awesome fonts
-├── images/           # Website images
-├── js/               # JavaScript files
-└── *.html            # HTML pages
+├── app.py             # Flask application and routes
+├── requirements.txt   # Python dependencies
+├── static/            # CSS, JS, images, fonts (served by Flask)
+│   ├── css/
+│   ├── js/
+│   ├── images/
+│   └── fonts/
+└── templates/         # Jinja2 templates
+    ├── base.html
+    ├── index.html
+    ├── news_detail.html
+    └── special_offer.html
 ```
 
-## Pages
+## Pages / Routes
 
-- `index.html` - Main homepage
-- `news-detail.html` - News article details
-- `special-offer.html` - Special offers page
+| Route | Description |
+|-------|-------------|
+| `/` | Main homepage |
+| `/news-detail/` | News article details |
+| `/special-offer/` | Special offers page |
 
 ## Setup
 
-No build process required. This is a static website that can be served directly from any web server or hosted on GitHub Pages.
+**Run as Flask app (recommended):**
+```bash
+pip install -r requirements.txt
+flask run
+```
+Then open http://127.0.0.1:5000/
+
 
 ## License
 
